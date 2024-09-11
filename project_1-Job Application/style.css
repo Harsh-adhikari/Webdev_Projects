@@ -1,0 +1,118 @@
+/* Unviversal css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*  by applying these three property we remove the by defult styleling done by the browser like the margin and padding applying not in the content it will apply in the box size which cause the change the size of the box and the styling giving to the content is appying on the box the box will suffer becuz it's original size is change   */
+  }
+  
+  body {
+    background-color: #ccc;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    /*this 0 is for top and bottom and auto is for right and left which automatically calculated by the browser which effectively center the element horizontally */
+    /* maximum width of 900 pixels for elements with the class container. */
+    /* margin: 0 auto centers the container horizontally by setting equal margins on the left and right, making use of auto margin to calculate the spacing. */
+  }
+  
+  .apply_box {
+    max-width: 600px;
+    padding: 20px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+    border-radius: 10px;
+    /* in this we can set the rgb but we set the rgba to the color intensity and this 0.5 is a alpha is a intensity / brightness we can set the alpha 0 to 1 range  */  
+    /* first valur is horizontally  second value is for vertically third valur is for blur and 4 vaule is  of spread  the color  and then rgba */   
+    /* if U want to make  a box shadow inside box then give     box-shadow: insert 0px 0px 15px 2px black  */
+
+  }
+  
+  .title_small {
+    font-size: 20px;
+  }
+  
+  .form_container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /*This part creates a flexible grid layout */
+    /*auto-fit: Automatically fits the columns into the available space. minmax(200px, 1fr): Specifies that each column should be at least 200 pixels wide, but can expand to fill available space (1fr).So, it ensures that each column is at least 200 pixels wide, but if there's more space available, they will expand evenly (1fr) to fill it.*/
+    gap: 20px;  /* it create gap between element or U can say This line sets a 20-pixel gap between grid items. It creates space between the grid cells, */
+  }
+  .form_control {
+    display: flex;  /* it allow you to do all the things easily like arrange the items children of the container in a row by default also make vertically if u want , control Alignment in vertically or horizontally , Flexible Sizing - the item can grow and shrink to the available space , Responsive Layouts  */
+    flex-direction: column;
+  }
+
+  label{
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  
+textarea {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+input:focus{
+    outline-color: red;
+
+    /* Targeting Focused Inputs: The code input:focus specifically targets input elements (like text fields) when they are in a focused state, meaning they are currently selected or active. */
+/* Changing the Outline Color: When an input element is focused, typically, browsers apply an outline around it to indicate its active state. This code changes the color of that outline to red. */
+}
+
+.button_container{
+    display: flex; /* first we make it flex*/
+
+
+    justify-content: flex-end;   /* then we use flex end it help to put the item in the end */
+    margin-top: 20px;
+}
+
+button{
+    background-color: red;
+    border: transparent solid 2px;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s ease-in;
+}
+button:hover{
+    background-color: #ccc;
+    border: 2px solid red;
+    color:black;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+.textarea_control {
+    grid-column: 1 / span 2;
+    /* 
+    It specifies that these elements should span two columns in a grid layout, starting from the first column (column 1) and extending to the next column.
+.textarea-control textarea { width: 100%; }:
+
+This code targets textarea elements inside elements with the class textarea-control.*/
+  }
+  .textarea_control textarea {
+    width: 100%;
+  }
+  
+  @media (max-width: 460px) {
+    .textarea_control {
+      grid-column: 1 / span 1;
+      /* It changes the grid-column property for these elements to 1 / span 1, which means they will occupy only one column in the grid layout, starting from the first column (column 1) and spanning just one column. */    
+    
+      /* In simpler terms, when the screen width is 460 pixels or less, the elements with the class textarea_control will only span one column in the grid layout, ensuring they fit better on smaller screens. Additionally, regardless of screen size, the textareas inside elements with the class textarea-control will always stretch to fill the entire width of their container. */
+
+    }
+  } ;
+  
+
+
+
+
+
