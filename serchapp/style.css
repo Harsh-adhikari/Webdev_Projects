@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Lora", serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+
+h1 {
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    margin: 40px 0 60px;
+    color: #dc0c0c;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#search-input {
+    width: 60%;
+    max-width: 480px;
+    padding: 12px 24px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 18px;
+    color: #333;
+    transition: box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+
+#Search-button {
+    padding: 12px 24px;
+    background-color: #138065;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#Search-button:hover {
+    background-color: #0b614b;
+    transform: scale(1.1);  /* Button grows slightly on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);  /* Increased shadow on hover */
+}
+
+#Search-button:active {
+    transform: scale(0.98);  /* Button shrinks slightly when clicked */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);  /* Reduced shadow when clicked */
+}
+
+
+.Search-results {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Search-result {
+    margin-bottom: 40px;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.Search-result:hover {
+    transform: scale(1.05);
+}
+
+.Search-result img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.Search-result:hover img {
+    opacity: 0.9;
+}
+
+.Search-result a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #0b22ef;
+    display: block;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.Search-result a:hover {
+    text-decoration: underline;
+}
+
+#show-more-button {
+    background-color: #138065;
+    font-size: 18px;
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    text-align: center;
+    display: none;
+    margin: 30px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#show-more-button:hover {
+    background-color: #0b614b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+    .Search-results {
+        padding: 20px;
+    }
+    .Search-result {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Search-result {
+        width: 100%;
+    }
+}
